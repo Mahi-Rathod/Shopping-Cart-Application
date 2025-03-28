@@ -10,7 +10,7 @@ export default function CartPage() {
         const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
         const discount = cart.reduce((total, item) => total + (item.discount || 0), 0);
         const delivery = cart.reduce((total, item) => total + (item.delivery || 0), 0);
-        return { totalPrice, discount,  delivery, totalAmount: totalPrice - discount + delivery };
+        return { totalPrice, discount, delivery, totalAmount: totalPrice - discount + delivery };
     };
 
     const totals = getTotal();
@@ -66,6 +66,12 @@ export default function CartPage() {
                     <p className="flex justify-between font-bold text-lg"><span>Total Amount</span> <span>₹{totals.totalAmount}</span></p>
                     <p className="text-green-600 text-sm">You will save ₹{totals.discount} on this order</p>
                 </div>
+                <button
+                    className="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 hover:cursor-pointer"
+                    onClick={() => alert(`Your order confirmed! Your Total charges : ${totals.totalAmount} ₹`)}
+                >
+                    Checkout
+                </button>
             </div>
         </div>
     );
