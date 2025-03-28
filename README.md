@@ -53,6 +53,7 @@ This is a **React.js** shopping cart application built with **Vite** and styled 
   |   ├── ProductContext.jsx
   │
   ├── pages
+  |   ├── Layout.jsx
   │   ├── ProductsPage.jsx
   │   ├── CartPage.jsx
   │
