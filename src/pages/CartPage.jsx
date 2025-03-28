@@ -9,9 +9,8 @@ export default function CartPage() {
     const getTotal = () => {
         const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
         const discount = cart.reduce((total, item) => total + (item.discount || 0), 0);
-        const coupons = cart.reduce((total, item) => total + (item.coupon || 0), 0);
         const delivery = cart.reduce((total, item) => total + (item.delivery || 0), 0);
-        return { totalPrice, discount, coupons, delivery, totalAmount: totalPrice - discount - coupons + delivery };
+        return { totalPrice, discount,  delivery, totalAmount: totalPrice - discount + delivery };
     };
 
     const totals = getTotal();
@@ -62,12 +61,10 @@ export default function CartPage() {
                 <div className="space-y-2 text-gray-700">
                     <p className="flex justify-between"><span>Price ({cart.length} items)</span> <span>₹{totals.totalPrice}</span></p>
                     <p className="flex justify-between text-green-600"><span>Discount</span> <span>- ₹{totals.discount}</span></p>
-                    <p className="flex justify-between text-green-600"><span>Coupons for you</span> <span>- ₹{totals.coupons}</span></p>
-                    <p className="flex justify-between"><span>Platform Fee</span> <span>₹3</span></p>
                     <p className="flex justify-between"><span>Delivery Charges</span> <span>₹{totals.delivery}</span></p>
                     <hr />
                     <p className="flex justify-between font-bold text-lg"><span>Total Amount</span> <span>₹{totals.totalAmount}</span></p>
-                    <p className="text-green-600 text-sm">You will save ₹{totals.discount + totals.coupons} on this order</p>
+                    <p className="text-green-600 text-sm">You will save ₹{totals.discount} on this order</p>
                 </div>
             </div>
         </div>
