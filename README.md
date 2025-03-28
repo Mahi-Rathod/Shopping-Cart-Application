@@ -26,7 +26,6 @@ This is a **React.js** shopping cart application built with **Vite** and styled 
 - Displays a **Price Summary** with:
   - Item price
   - Discounts
-  - Coupons
   - Delivery charges
   - Final total
 
