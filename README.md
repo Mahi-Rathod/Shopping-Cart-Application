@@ -66,7 +66,7 @@ This is a **React.js** shopping cart application built with **Vite** and styled 
 1. Clone the repository:
    ```sh
    git clone https://github.com/Mahi-Rathod/Shopping-Cart-Application
-   cd shopping-cart
+   cd Shopping-Cart-Application
    ```
 2. Install dependencies:
    ```sh
