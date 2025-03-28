@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FaTrash, FaBookmark, FaPlus, FaMinus } from "react-icons/fa";
 import { useCart } from "../context/CartContext.jsx";
 
